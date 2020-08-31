@@ -1,47 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
-        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-        <link type="text/css" rel="stylesheet" href="style.css">
-        
-        <title>Pig Game</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <title>Roll the Dice Game</title>
+  </head>
 
-    <body>
-        <div class="wrapper clearfix">
-            <div class="player-0-panel active">
-                <div class="player-name" id="name-0">Player 1</div>
-                <div class="player-score" id="score-0">43</div>
-                <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
-                    <div class="player-current-score" id="current-0">11</div>
-                </div>
-            </div>
-            
-            <div class="player-1-panel">
-                <div class="player-name" id="name-1">Player 2</div>
-                <div class="player-score" id="score-1">72</div>
-                <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
-                    <div class="player-current-score" id="current-1">0</div>
-                </div>
-            </div>
-            
-            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
-            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button> 
-            
-            <form>
-                <div class="btn-wscore"><i class="ion-settings"></i>Winner Score: <input type ='text' class = 'winningScore' placeholder = 'enter winning score'></div> 
-                
-              </form>
-            
-            <img src="dice-5.png" alt="Dice" class="dice">
-            <img src="dice-5.png" alt="Dice" class="dice2">
+  <body>
+    <div class="wrapper clearfix">
+      <div class="player-0-panel active">
+          <input type="text" class="input-name" id="input-0" placeholder="Change player 1 name"></input>
+          <button type="button" class="button-name" id="button-0">Change name</button>
+        <div class="player-name" id="name-0">Player 1</div>
+        <div class="player-score" id="score-0">43</div>
+        <div class="player-current-box">
+          <div class="player-current-label">Current</div>
+          <div class="player-current-score" id="current-0">11</div>
         </div>
-        
-        <script src="app.js"></script>
-    </body>
+        <div class="player-0-history">
+          Previous moves d1
+          <p class="player-score-h-0" id="history-0"></p>
+        </div>
+        <div class="player-0-history">
+          Previous moves d2
+          <p class="player-score-h-0" id="history-1"></p>
+        </div>
+      </div>
+
+      <div class="player-1-panel">
+          <input class="input-name" id="input-1" placeholder="Change player 2 name"></input>
+          <button class="button-name" id="button-1">Change name</button>
+        <div class="player-name" id="name-1">Player 2</div>
+        <div class="player-score" id="score-1">72</div>
+        <div class="player-current-box">
+          <div class="player-current-label">Current</div>
+          <div class="player-current-score" id="current-1">0</div>
+        </div>
+        <div class="player-1-history">
+          Previous moves d1
+          <p class="player-score-h-1" id="history-2"></p>
+        </div>
+        <div class="player-0-history">
+          Previous moves d2
+          <p class="player-score-h-0" id="history-3"></p>
+        </div>
+      </div>
+
+      <button class="btn-setNewScore" id="btn-setNewScore">
+        <i class="ion-ios-settings"></i>Set final score
+      </button>
+      <div class="winnerScore" id="winnerScore" value="0">0</div>
+      <button class="btn-new" id="btn-new">
+        <i class="ion-ios-play-outline"></i>New game
+      </button>
+      <button class="btn-roll" id="btn-roll">
+        <i class="ion-ios-reload"></i>Roll dice
+      </button>
+
+      <img src="dice-5.png" alt="Dice" class="dice" id="dice-1" />
+      <img src="dice-4.png" alt="Dice2" class="dice" id="dice-2" />
+    </div>
+    <div class="wrapper2 clearfix">
+      <div class="rules">Rules</div>
+      <ul class="firstUL">
+        <li>If one of the dices is 1, lose the points earned</li>
+        <li>
+          If your two dices is the same number, sum the numbers and multiply by
+          2
+        </li>
+        <li>Else, receive the sum of the two dices</li>
+      </ul>
+      <div class="button">Buttons</div>
+      <ul class="secondUL">
+        <li>Set new score</li>
+        <li>New game</li>
+        <li>Roll dice</li>
+      </ul>      
+    </div>  
+    <footer>© Nathan Souza</footer>  
+    <script src="app.js"></script>
+  </body>
 </html>
